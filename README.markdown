@@ -16,7 +16,7 @@ This profile installs a site with the structure, content, permissions, etc of Dr
 
 (Note: It could take a few minutes before any output appears)
 
-Navigate to http://localhost/mydrupalorg/ and start the installation, choosing the "Vim.org" installation profile at the beginning.
+Navigate to http://localhost/myvimorg/ and start the installation, choosing the "Vim.org" installation profile at the beginning.
 
 ## Contributing
 
@@ -27,3 +27,8 @@ If you know [Drupal](http://drupal.org), please [contact me (cweagans)](http://c
 If you're a designer, please [contact me (cweagans)](http://cweagans.net/contact). I'm not a designer, and somebody with good design skills is much needed.
 
 If you'd like to test what we have, you'll probably have to wait until we have a demo site online.
+
+## Credits
+
+These installation instructions were largely copy/pasted from http://drupal.org/project/drupalorg_testing
+
