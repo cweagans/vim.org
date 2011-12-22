@@ -7,7 +7,7 @@
  */
 function vim_install() {
 
-  $default_theme = 'vimorg';
+  $default_theme = 'vimtheme';
   $admin_theme = 'seven';
   $values = array(
     array(
@@ -114,9 +114,9 @@ function vim_install() {
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')
-    ->condition('name', 'vimorg')
+    ->condition('name', 'vimtheme')
     ->execute();
-  variable_set('theme_default', 'vimorg');
+  variable_set('theme_default', 'vimtheme');
 
   // Turn off bartik
   db_update('system')
