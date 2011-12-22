@@ -1,6 +1,6 @@
 # Vim.org Redesign
 
-This profile installs a site with the structure, content, permissions, etc of Drupal.org to facilitate the reproduction of bugs and testing of patches for the project modules. See What theme and modules does Drupal.org use? for the complete list.
+This profile installs a site with the structure, content, permissions, etc of vim.org to facilitate local development, code staging, and easy deployment.
 
 ## Getting started
 
