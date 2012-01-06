@@ -8,11 +8,11 @@ projects[ctools][version] = "1.0-rc1"
 
 projects[features][subdir] = "contrib"
 projects[features][type] = "module"
-projects[features][version] = "1.0-beta4"
+projects[features][version] = "1.0-beta6"
 
 projects[views][subdir] = "contrib"
 projects[views][type] = "module"
-projects[views][version] = "3.0-rc1"
+projects[views][version] = "3.0"
 
 ; Contrib themes
 projects[omega][subdir] = "contrib"
