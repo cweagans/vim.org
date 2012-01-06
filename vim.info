@@ -30,7 +30,7 @@ dependencies[] = ctools
 dependencies[] = features
 
 ; Features
-
+dependencies[] = vimorg_main
 
 files[] = editorscripts.profile
 
