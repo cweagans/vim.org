@@ -35,8 +35,8 @@ function vimorg_main_context_default_contexts() {
         'system-user-menu' => array(
           'module' => 'system',
           'delta' => 'user-menu',
-          'region' => 'menu',
-          'weight' => '-9',
+          'region' => 'user_menu',
+          'weight' => '-10',
         ),
         'system-main-menu' => array(
           'module' => 'system',
