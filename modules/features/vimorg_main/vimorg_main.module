@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the vimorg_main feature.
+ */
+
+include_once('vimorg_main.features.inc');
