@@ -2,6 +2,10 @@ core = "7.x"
 api = "2"
 
 ; Contrib modules
+projects[context][subdir] = "contrib"
+projects[context][type] = "module"
+projects[context][version] = "3.0-beta2"
+
 projects[ctools][subdir] = "contrib"
 projects[ctools][type] = "module"
 projects[ctools][version] = "1.0-rc1"
