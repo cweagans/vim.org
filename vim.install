@@ -110,6 +110,13 @@ function vim_install() {
   );
   menu_link_save($item);
 
+  $item = array(
+    'link_title' => st('Login'),
+    'link_path' => 'user/login',
+    'menu_name' => 'user-menu',
+  );
+  menu_link_save($item);
+
   // Enable the Respond theme
   db_update('system')
     ->fields(array('status' => 1))
