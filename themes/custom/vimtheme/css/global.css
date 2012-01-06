@@ -1,1 +1,10 @@
-/* This file will hold the main styles for your website. */
+#zone-branding-wrapper {
+  background-color: #283E0D;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#section-footer {
+  background-color: #252525;
+  min-height: 100px;
+}
