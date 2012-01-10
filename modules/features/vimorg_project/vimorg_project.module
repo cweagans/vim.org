@@ -1,0 +1,82 @@
+<?php
+/**
+ * @file
+ * Code for the Vim.org Project feature.
+ */
+
+include_once 'vimorg_project.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function vimorg_project_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'project_node_form') {
+    $form['field_project_key']['#access'] = FALSE;
+    $form['actions']['submit']['#validate'][] = 'vimorg_project_generate_key';
+  }
+}
+
+/**
+ * Form submission callback for project_node_form.
+ *
+ * Set the project key field, which will be used for authenticating
+ * commit information passed from Github (to prevent unauthorized users
+ * from creating commit information in this project)
+ */
+function vimorg_project_generate_key($form, &$form_state) {
+  $node = $form['#node'];
+  $key_string = $node->nid . $node->created . variable_get('vimorg_project_key_salt', 'vimorg');
+  $form_state['values']['field_project_key']['und'][0]['value'] = md5($key_string);
+}
+
+/**
+ * Implements hook_menu().
+ */
+function vimorg_project_menu() {
+  $items = array();
+
+  $items['github/%projectkey'] = array(
+    'title' => 'Github Web Hook URL',
+    'access callback' => TRUE,
+    'page callback' => 'vimorg_project_github_post',
+    'page arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['github'] = $items['github/%projectkey'];
+
+  return $items;
+}
+
+/**
+ * Menu callback for handling Github post requests.
+ */
+function vimorg_project_github_post($project_key = NULL) {
+  // Ensure that a project key is supplied.
+  if ($project_key == NULL) {
+    print t('You must supply a project key');
+    exit();
+  }
+
+  // Lookup the node by the supplied project key.
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'project')
+    ->fieldCondition('field_project_key', 'value', $project_key)
+    ->execute();
+
+  // Get the Node IDs returned by the EntityFieldQuery;
+  $nids = array_keys($result['node']);
+
+  // Load those nodes (there should only be one)
+  $node = entity_load('node', $nids);
+
+  // Simplify the contents of $node (we are assuming that only one node was
+  // returned by the EntityFieldQuery.
+  $node = $node[$nids[0]];
+
+  $node->title = 'asdjdbfjibdfijddfasdf';
+  node_save($node);
+
+  exit();
+}
