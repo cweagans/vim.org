@@ -75,8 +75,9 @@ function vimorg_project_github_post($project_key = NULL) {
   // returned by the EntityFieldQuery.
   $node = $node[$nids[0]];
 
-  $node->title = 'asdjdbfjibdfijddfasdf';
-  node_save($node);
-
+  // We should probably come up with a hook for other modules to operate on
+  // here. We might want to do a little bit of preprocessing to determine
+  // what sort of data we're receiving and fire the correct hook(s) based on
+  // that.
   exit();
 }
