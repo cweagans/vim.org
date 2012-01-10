@@ -2,9 +2,34 @@
   background-color: #283E0D;
   padding-bottom: 20px;
   padding-top: 20px;
+  border-bottom: #252525;
+}
+
+#block-system-user-menu h2.block-title,
+#block-system-main-menu h2.block-title {
+  display: none;
+}
+
+#block-system-user-menu ul li.leaf,
+#block-system-main-menu ul li.leaf {
+  list-style-type: none;
+  list-style-image: none;
+  display: inline;
+}
+
+#block-system-user-menu ul li.leaf a,
+#block-system-main-menu ul li.leaf a {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+
+#block-system-user-menu ul li.leaf a:hover,
+#block-system-main-menu ul li.leaf a:hover {
+  text-decoration: underline;
 }
 
 #section-footer {
   background-color: #252525;
   min-height: 100px;
 }
+

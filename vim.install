@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install an instance of vim.org
+ */
+
+/**
  * Implements hook_install().
  *
  * Perform actions to set up the site for this profile.
@@ -87,7 +92,8 @@ function vim_install() {
   }
   $query->execute();
 
-  // Create a default role for site administrators, with all available permissions assigned.
+  // Create a default role for site administrators, with all available
+  // permissions assigned.
   $admin_role = new stdClass();
   $admin_role->name = 'administrator';
   $admin_role->weight = 2;
@@ -117,7 +123,7 @@ function vim_install() {
   );
   menu_link_save($item);
 
-  // Enable the Respond theme
+  // Enable the vim.org theme.
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')
@@ -125,7 +131,7 @@ function vim_install() {
     ->execute();
   variable_set('theme_default', 'vimtheme');
 
-  // Turn off bartik
+  // Turn off bartik.
   db_update('system')
     ->fields(array('status' => 0))
     ->condition('type', 'theme')
@@ -141,7 +147,7 @@ function vim_install() {
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
 
-  // Enable the panels node template by default
+  // Enable the panels node template by default.
   variable_set('page_manager_node_view_disabled', FALSE);
 
   // Update the menu router information.

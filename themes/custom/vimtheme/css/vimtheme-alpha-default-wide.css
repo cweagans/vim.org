@@ -1,1 +1,16 @@
-/* This file will hold styles that are loaded using the same media query as the wide grid. */
+#block-system-user-menu {
+  float: right;
+  padding-top: 8px;
+  margin-top: -20px;
+}
+
+#block-system-main-menu {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.4em;
+  float: right;
+}
+
+#block-search-form {
+  float: right;
+}

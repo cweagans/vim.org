@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Provides a form_alter call for the vim.org installation profile.
+ */
+
+/**
  * Implements hook_form_FORM_ID_alter().
  *
  * Allows the profile to alter the site configuration form.
